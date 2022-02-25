@@ -169,14 +169,14 @@ class StageChangeTestCase(APITestCase):
             EXPECTED_OUTPUT_WITHOUT_STAGE_MAPPING
         )
 
-        response_without_mapping = self.client.post(
+        response_with_mapping = self.client.post(
             '/api/stage-change-events/group_stage_change_events/', 
             {'mapping': STAGE_MAPPING_1}, 
             format='json'
         )
-        self.assertEqual( response_without_mapping.status_code, 200)
+        self.assertEqual( response_with_mapping.status_code, 200)
         self.assertUnorderedJsonEquivalence( 
-            response_without_mapping.data, 
+            response_with_mapping.data, 
             EXPECTED_OUTPUT_WITH_STAGE_MAPPING_1
         )
 
