@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from . import utils
+from core.utils import group_stage_change_converter
+from .models import Customer, StageChangeEvent, Stage, GroupStageChangeMapping
 
-from .models import Customer, StageChangeEvent, Stage
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,4 +16,14 @@ class StageSerializer(serializers.ModelSerializer):
 class StageChangeEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = StageChangeEvent
-        fields = ['id', 'description', 'from_stage_id', 'to_stage_id', 'customer', 'created_at', 'updated_at']
+        fields = ['id', 'description', 'from_stage', 'to_stage', 'customer', 'created_at', 'updated_at']
+
+class GroupStageChangeMappingSerializer(serializers.ModelSerializer):
+    mapped_data = serializers.SerializerMethodField()
+
+    def get_mapped_data(self, obj):
+        return group_stage_change_converter(obj.mapping)
+
+    class Meta:
+        model = GroupStageChangeMapping
+        fields = ['id', 'mapped_data', 'created_at', 'updated_at', 'name', 'mapping']
