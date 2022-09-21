@@ -1,0 +1,38 @@
+[
+  {
+    "model": "core.GroupStageChangeMapping",
+    "pk": 1,
+    "fields": {
+      "name": "Scheduling Review Complete Mapping",
+      "mapping": {
+        "new_referral": "Scheduling",
+        "on_hold": "Scheduling",
+        "contacted": "Scheduling",
+        "scheduled": "Scheduling",
+        "in_review": "Review",
+        "reviewed": "Review",
+        "complete": "Complete",
+        "cancelled": "Complete",
+        "archived": "Complete"
+      }
+    }
+  },
+  {
+    "model": "core.GroupStageChangeMapping",
+    "pk": 2,
+    "fields": {
+      "name": "Throughput High Level Mapping",
+      "mapping": {
+        "new_referral": "Processing",
+        "on_hold": "Processing",
+        "contacted": "Processing",
+        "scheduled": "Processing",
+        "in_review": "Processing",
+        "reviewed": "Processing",
+        "complete": "Complete",
+        "cancelled": "Cancelled",
+        "archived": "Cancelled"
+      }
+    }
+  }
+]
