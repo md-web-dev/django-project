@@ -63,9 +63,9 @@ EXPECTED_OUTPUT_WITHOUT_STAGE_MAPPING = [
         "count_of_stage_changes": 23
     },
     {
-        "from_stage_name": "None",
+        "from_stage_name": None,
         "to_stage_name": "New Referral",
-        "count_of_stage_changes": 30
+        "count_of_stage_changes": 0
     }
 ]
 
