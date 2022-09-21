@@ -8,6 +8,7 @@ hiredis==2.0.0  # https://github.com/redis/hiredis-py
 celery==5.2.3  # pyup: < 6.0  # https://github.com/celery/celery
 django-celery-beat==2.2.1  # https://github.com/celery/django-celery-beat
 deepdiff==5.7.0
+convtools==0.35.0
 
 # Django
 # ------------------------------------------------------------------------------
